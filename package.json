@@ -13,7 +13,8 @@
     "format": "npm run prettier -- README.md \"src/**/*.{js,ts}\"",
     "build": "rimraf dist && tsc",
     "specs": "jest --coverage",
-    "test": "npm run lint && npm run build && npm run specs",
+    "test": "npm run lint && npm run build && npm run specs && npm run size",
+    "size": "size-limit",
     "prepare": "npm run build"
   },
   "repository": {
@@ -37,6 +38,12 @@
     "url": "https://github.com/serviejs/popsicle-transport-xhr/issues"
   },
   "homepage": "https://github.com/serviejs/popsicle-transport-xhr",
+  "size-limit": [
+    {
+      "path": "dist/index.js",
+      "limit": "1 kB"
+    }
+  ],
   "jest": {
     "roots": [
       "<rootDir>/src/"
@@ -79,6 +86,7 @@
     "lint-staged": "^8.2.0",
     "prettier": "^1.18.2",
     "servie": "^4.0.10",
+    "size-limit": "^1.3.6",
     "ts-jest": "^24.0.2",
     "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
