@@ -129,6 +129,7 @@ export function transport(options: TransportOptions = {}) {
             status: xhr.status === 1223 ? 204 : xhr.status,
             statusText: xhr.statusText,
             headers: parseXhrHeaders(xhr.getAllResponseHeaders()),
+            omitDefaultHeaders: true,
             url: xhr.responseURL
           }
         );
