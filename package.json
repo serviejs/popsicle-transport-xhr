@@ -1,6 +1,6 @@
 {
   "name": "popsicle-transport-xhr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Popsicle transport for sending requests over `XMLHttpRequest`",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
