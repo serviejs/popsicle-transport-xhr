@@ -76,7 +76,7 @@ export class TypeError extends Error {
 }
 
 export class AbortError extends Error {
-  code = "EABORT"
+  code = "EABORT";
 
   constructor(public request: Request, message: string) {
     super(message);
@@ -93,9 +93,7 @@ export function transport(options: TransportOptions = {}) {
       const method = req.method.toUpperCase();
 
       if (req.signal.aborted) {
-        return reject(
-          new AbortError(req, "Request has been aborted")
-        );
+        return reject(new AbortError(req, "Request has been aborted"));
       }
 
       // Loading HTTP resources from HTTPS is restricted and uncatchable.
