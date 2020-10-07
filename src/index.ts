@@ -89,7 +89,7 @@ export class AbortError extends Error {
 export function transport(options: TransportOptions = {}) {
   return function(req: Request): Promise<XhrResponse> {
     return new Promise<XhrResponse>(function(resolve, reject) {
-      const type = options.type || "text";
+      const type = options.type || "arraybuffer";
       const method = req.method.toUpperCase();
 
       if (req.signal.aborted) {
